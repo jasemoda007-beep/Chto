@@ -8,11 +8,10 @@ TWEAK_NAME = ESP
 
 include $(THEOS)/makefiles/common.mk
 
-ESP_FRAMEWORKS = IOKit  UIKit Foundation Security QuartzCore CoreGraphics CoreText  AVFoundation Accelerate GLKit SystemConfiguration GameController
+ESP_FRAMEWORKS = IOKit UIKit Foundation Security QuartzCore CoreGraphics CoreText AVFoundation Accelerate GLKit SystemConfiguration GameController
 
-# تم إصلاح الخطأ هنا: تعريف المجلد الحالي كمكان للبحث عن الـ Framework
-ESP_LDFLAGS += -F$(CURDIR) -framework JRMemory
-
+# الربط المباشر بالملف اللي راح ترفعه (بدون الحاجة لمجلد framework)
+ESP_LDFLAGS += ./JRMemory
 
 ESP_CCFLAGS = -std=c++14 -fno-rtti -fno-exceptions -DNDEBUG -fvisibility=hidden -Wc++14-narrowing -Wno-narrowing -Wundefined-bool-conversion -Wreturn-stack-address -Wno-error=format-security -fvisibility=hidden -fpermissive -fexceptions -w -s
 ESP_CFLAGS = -w -fobjc-arc -Wno-deprecated-declarations -Wno-unused-variable -Wno-unused-value
