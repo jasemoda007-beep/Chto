@@ -10,8 +10,8 @@ include $(THEOS)/makefiles/common.mk
 
 ESP_FRAMEWORKS = IOKit UIKit Foundation Security QuartzCore CoreGraphics CoreText AVFoundation Accelerate GLKit SystemConfiguration GameController
 
-# "الصهر" - الربط المباشر باستخدام المسار الكامل للسيرفر لضمان سحب الملف
-ESP_LDFLAGS += $(CURDIR)/JRMemory
+# "الصهر" - التعديل الجديد لسحب الملف من داخل فولدر 
+ESP_LDFLAGS += $(CURDIR) lib/JRMemory.framework/Headers/MemScan.h
 
 ESP_CCFLAGS = -std=c++14 -fno-rtti -fno-exceptions -DNDEBUG -fvisibility=hidden -Wc++14-narrowing -Wno-narrowing -Wundefined-bool-conversion -Wreturn-stack-address -Wno-error=format-security -fvisibility=hidden -fpermissive -fexceptions -w -s
 ESP_CFLAGS = -w -fobjc-arc -Wno-deprecated-declarations -Wno-unused-variable -Wno-unused-value
