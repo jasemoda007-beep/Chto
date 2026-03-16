@@ -30,6 +30,9 @@ jobs:
         repository: theos/sdks
         path: theos/sdks
 
+    - name: Install ldid
+      run: brew install ldid
+
     - name: Build Tweak (Make Package)
       run: |
         make package FINALPACKAGE=1
