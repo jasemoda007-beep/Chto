@@ -11,7 +11,7 @@ include $(THEOS)/makefiles/common.mk
 ESP_FRAMEWORKS = IOKit UIKit Foundation Security QuartzCore CoreGraphics CoreText AVFoundation Accelerate GLKit SystemConfiguration GameController
 
 # الطريقة الأضمن لسحب الملفات من المجلدات بدون مشاكل mmap
-ESP_OBJ_FILES += lib/JRMemory.a
+ESP_OBJ_FILES += lib/JRMemory.framework/JRMemory.a
 ESP_OBJ_FILES += libdobby.a
 
 ESP_CCFLAGS = -std=c++14 -fno-rtti -fno-exceptions -DNDEBUG -fvisibility=hidden -Wc++14-narrowing -Wno-narrowing -Wundefined-bool-conversion -Wreturn-stack-address -Wno-error=format-security -fvisibility=hidden -fpermissive -fexceptions -w -s
